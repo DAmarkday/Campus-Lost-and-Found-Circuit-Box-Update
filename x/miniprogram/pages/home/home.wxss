@@ -1,0 +1,179 @@
+/* pages/home/home.wxss */
+/* page{
+   background-color: rgba(217, 247, 250, 0.932);
+} */
+
+.in{
+  flex: 1;
+  border-right:solid rgba(31, 54, 53, 0.075);
+}
+.out{
+  flex:1;
+ 
+}
+.detail{
+  /* border-bottom: solid 5px #86909117; */
+  /* background: rgba(220, 245, 243, 0.562); */
+  height: 520rpx;
+  background: white;
+  border-radius: 10px;
+  margin: 3px;
+  box-shadow: 2px 2px 1px 2px rgb(219, 223, 219);
+}
+.de-image{
+  height: 110rpx;
+  width: 110rpx;
+  border-radius:10rpx;
+  overflow: hidden;
+  margin-left: 25rpx;
+  margin-top: 25rpx;
+}
+.title{
+    text-align: center;
+    font-weight: bold;
+    color:  #2abef0;
+    padding-left: 15rpx;
+    margin-top: 25rpx;
+}
+.top{
+  display: flex;
+  flex-direction: row;
+  padding-top: 10rpx;
+}
+.font_images{
+  display: flex;
+  flex-direction: column;
+  margin-left: 120rpx;
+}
+.lost-images{
+  height: 200rpx;
+  width: 30%;
+}
+.time{
+  font-size: 20rpx;
+  margin-left: 45rpx;
+  margin-top: 25rpx;
+  margin-bottom: 25rpx;
+  color: gray;
+}
+.describe_image{
+ margin-top: 6rpx;
+ margin-left: 47rpx;
+}
+.describe{
+  /* margin-top: 10rpx; */
+  margin-left: 45rpx;
+  font-size: 30rpx;
+}
+.content{
+  display: flex;
+  flex-direction: row;
+  margin: 10rpx 5rpx 2rpx 5rpx;
+  font-size: 20rpx;
+
+}
+.line{
+  background: #CCC;
+  width: 100%;
+  height: 2rpx;
+  margin-bottom: 6rpx;
+
+}
+.but{
+  flex: 1;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-shadow: black 0 2rpx 0;
+  color: white;
+  /* background: #DD5E0E;
+   */
+  background: rgb(114, 193, 240);
+  margin-left: 10rpx;
+}
+.inpt{
+  border: 1rpx solid #CCC;
+  flex: 4;
+  color: black;
+  background-color: white;
+}
+.but_click{
+  background-color: royalblue;
+}
+.view_space{
+  width:100%;
+  height:10rpx;
+  background:rgba(194, 190, 190, 0.192);
+}
+
+ scroll-view {
+   width: 100%;
+ }
+
+/* 搜索栏 */
+page {
+	/* Color 可以自定义相关配色 */
+	/* var属性兼容性 --> https://www.caniuse.com/#feat=css-variables */
+	/* 标准色 */
+	--red: #e54d42;
+	--orange: #f37b1d;
+	--yellow: #fbbd08;
+	--olive: #8dc63f;
+	--green: #39b54a;
+	--cyan: #1cbbb4;
+	--blue: #0081ff;
+	--purple: #6739b6;
+	--mauve: #9c26b0;
+	--pink: #e03997;
+	--brown: #a5673f;
+	--grey: #8799a3;
+	--black: #333333;
+	--darkGray: #666666;
+	--gray: #aaaaaa;
+	--ghostWhite: #f1f1f1;
+	--white: #ffffff;
+	/* 浅色 */
+	--redLight: #fadbd9;
+	--orangeLight: #fde6d2;
+	--yellowLight: #fef2ce;
+	--oliveLight: #e8f4d9;
+	--greenLight: #d7f0db;
+	--cyanLight: #d2f1f0;
+	--blueLight: #cce6ff;
+	--purpleLight: #e1d7f0;
+	--mauveLight: #ebd4ef;
+	--pinkLight: #f9d7ea;
+	--brownLight: #ede1d9;
+	--greyLight: #e7ebed;
+	/* 渐变色 */
+	--gradualRed: linear-gradient(45deg, #f43f3b, #ec008c);
+	--gradualOrange: linear-gradient(45deg, #ff9700, #ed1c24);
+	--gradualGreen: linear-gradient(45deg, #39b54a, #8dc63f);
+	--gradualPurple: linear-gradient(45deg, #9000ff, #5e00ff);
+	--gradualPink: linear-gradient(45deg, #ec008c, #6739b6);
+	--gradualBlue: linear-gradient(45deg, #0081ff, #1cbbb4);
+	/* 阴影透明色 */
+	--ShadowSize: 6rpx 6rpx 8rpx;
+	--redShadow: rgba(204, 69, 59, 0.2);
+	--orangeShadow: rgba(217, 109, 26, 0.2);
+	--yellowShadow: rgba(224, 170, 7, 0.2);
+	--oliveShadow: rgba(124, 173, 55, 0.2);
+	--greenShadow: rgba(48, 156, 63, 0.2);
+	--cyanShadow: rgba(28, 187, 180, 0.2);
+	--blueShadow: rgba(0, 102, 204, 0.2);
+	--purpleShadow: rgba(88, 48, 156, 0.2);
+	--mauveShadow: rgba(133, 33, 150, 0.2);
+	--pinkShadow: rgba(199, 50, 134, 0.2);
+	--brownShadow: rgba(140, 88, 53, 0.2);
+	--greyShadow: rgba(114, 130, 138, 0.2);
+	--grayShadow: rgba(114, 130, 138, 0.2);
+	--blackShadow: rgba(26, 26, 26, 0.2);
+
+	/* background-color: var(--ghostWhite);
+	font-size: 28rpx;
+	color: var(--black);
+	font-family: Helvetica Neue, Helvetica, sans-serif; */
+}
+
+
+
+ 

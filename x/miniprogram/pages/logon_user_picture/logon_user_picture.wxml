@@ -1,0 +1,33 @@
+<view class="view">
+  <view class="window">
+    <view style="display:flex;justify-content:center;">
+      <text style="margin: 30rpx auto;font-size: 50rpx;color: rgb(151, 51, 26);margin-top:70rpx;">请正对屏幕拍照</text>
+    </view>
+    <view class="imageview">
+      <image class="cover-9" src="{{tempImagePicturePath}}" bindtap="img"></image>
+    </view>
+    <view style="display:block;">
+    <view style="display:flex;width:100%;justify-content:center;">
+      <button bindtap="uploadUserPicture" type="primary" class="btn_face_again">上传照片</button>
+
+    </view>
+    </view>
+    <view style="display:block;">
+     <view style="display:flex;width:100%;justify-content:center;">
+     <button bindtap="open1" type="primary" style="margin-top:0;" class="btn_face_again">重拍</button>
+       </view>
+         </view>
+  </view>
+
+
+  <camera class="camera" wx:if="{{camera1}}" flash="off" device-position="{{devicePosition1?'back':'front'}}">
+    <cover-view class="cover-1" bindtap="camera1">
+      <cover-view class="cover-2">
+        <!-- <cover-view class="cover-5" wx:if="{{type=='startRecord'&&startRecord}}">{{time}}S</cover-view> -->
+      </cover-view>
+    </cover-view>
+       <cover-image class="cover-3" src="/images/face.png" style="width:600rpx;height:650rpx;" ></cover-image>
+    <cover-image class="cover-4" src="/images/deviceposition.png" style="width:100rpx;height:100rpx;" bindtap="devicePosition1"></cover-image> 
+  </camera>
+
+</view>

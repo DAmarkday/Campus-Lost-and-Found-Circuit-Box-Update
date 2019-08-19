@@ -1,0 +1,24 @@
+<!--pages/detail/detail.wxml-->
+<view>
+  <view wx:for="{{infor}}">
+    <view class='head'>
+      <view class='describe'>{{item.title}}</view>
+      <view class='time'>{{item.time}}</view>
+    </view>
+    <view class='imagedescrible'>
+      <view class='imagefont'>图片详情</view>
+      <view class='imge_margin'>
+        <image bindtap='bigger' class='lost-images' src='{{item.image}}' mode='aspectFit' data-src='{{item.image}}'></image>
+      </view>
+    </view>
+    <view class='detaildescrible'>
+      <view class='detaildescription'>
+        <text>详细描述</text>
+      </view>
+      <view class='description'>
+        <text class='texta'>{{item.description}}</text>
+      </view>
+    </view>
+  </view>
+  <button class='out' type='primary' bindtap='take_out'>取出</button>
+</view>

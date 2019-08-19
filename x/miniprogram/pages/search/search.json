@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "mp-loading": "../../colorui/loading/loading"
+  },
+  "navigationBarTitleText": "搜索"
+}

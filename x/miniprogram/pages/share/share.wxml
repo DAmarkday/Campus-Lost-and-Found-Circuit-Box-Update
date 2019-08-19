@@ -1,0 +1,55 @@
+<!--pages/share/share.wxml-->
+<form bindsubmit='onAdd'>
+  <!-- 标题 -->
+<view>
+<input class='title' placeholder='失物名称' maxlength='30' bindblur='titleis' placeholder-style="color:#ccc;font-size:30rpx;"/>
+</view>
+  <!-- 描述区域  -->
+  <view class='information'>
+    <textarea class='describe' bindblur='talks' placeholder="请详细描述失物情况。" maxlength="200"    placeholder-style="color:#ccc;font-size:30rpx;" />
+  </view>
+
+
+
+  <!-- 图片 -->
+
+	<view class="cu-bar bg-white">
+		<view class="action">
+			图片上传
+		</view>
+	</view>
+  
+	<view class="cu-form-group">
+		<view class="grid col-4 grid-square flex-sub">
+    <!-- 上传的图片 -->
+    <view class="bg-img" wx:if="{{imgUrl}}">
+      <image src='{{imgUrl}}' mode='aspectFill'></image>
+    </view>
+    <!-- 相机点击的图片 -->
+			<view class="solids" >
+				<text class="cuIcon-cameraadd" bindtap='doUpload'></text>
+			</view>
+		</view>
+	</view>
+
+  <!-- 原来上传 -->
+  <!-- <view class='row_image'>
+    <view wx:if='{{imgUrl}}'>
+      <image src='{{imgUrl}}' class='add' mode="aspectFit"></image>
+    </view>
+   
+    <image src='cloud://pg-fe78f3.7067-pg-fe78f3/加.png' class='add' bindtap='doUpload'></image>
+  </view> -->
+
+
+    <!-- 箱子大小选择 -->
+  <view class='radiog'>
+  <text class='size'>选择箱子型号：</text>
+<radio-group class="radio-group" bindchange="radioChange">
+  <label class="radio" wx:for="{{items}}" >
+    <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+  </label>
+</radio-group>
+  </view>
+  <button class='share' type='primary' form-type="submit">发布</button>
+</form>

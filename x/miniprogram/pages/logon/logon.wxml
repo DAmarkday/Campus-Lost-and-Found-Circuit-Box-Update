@@ -1,0 +1,17 @@
+<!--pages/logon/logon.wxml-->
+
+<image src='../../images/slider2.jpg' mode='aspectFill' class='image'></image>
+
+<form bindsubmit='httpLaunch'>
+  <view class='inp'>
+  <text>账号：</text>
+    <input class='input' type='number' placeholder='请输入账号' bindinput='number'></input>
+  </view>
+
+  <view class='inp'>
+  <text>密码：</text>
+    <input password class='input' type='text' placeholder='请输入密码' bindinput='password'/>
+  </view>
+  <button class='but' type='primary' form-type='submit'>认证</button>
+
+</form>

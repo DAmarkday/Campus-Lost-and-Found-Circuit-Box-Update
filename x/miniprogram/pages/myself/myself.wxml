@@ -1,0 +1,23 @@
+<!--pages/myself/myself.wxml-->
+<view class='userinfo'>
+  <!-- <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image> -->
+  <open-data class="userinfo-avatar" mode="cover" type="userAvatarUrl"></open-data>
+  <!-- <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
+  <open-data class="userinfo-nickname" type="userNickName"></open-data>
+  <text class="userinfo-nickname" style="font-size:7pt;color:green;margin-left:30rpx;">{{studentShowID}}</text>
+</view>
+<view class='approve' bindtap='usePageBtn'>
+  <text class='satuation'>使用情况</text>
+</view>
+<view class='approve' bindtap='studentprove'>
+  <text class='satuation'>学生认证</text>
+</view>
+<view class='approve' bindtap=''>
+  <text class='satuation'>账号注销</text>
+</view>
+<view class='approve' bindtap=''>
+  <text class='satuation'>关于我们</text>
+</view>
+<button open-type="getUserInfo" />
+
+<open-data class="userinfo-nickname" type="userNickName"></open-data>

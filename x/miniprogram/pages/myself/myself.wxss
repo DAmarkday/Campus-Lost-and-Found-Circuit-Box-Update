@@ -1,0 +1,44 @@
+page{
+  background-color:rgba(164, 195, 199, 0.295);
+}
+.userinfo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #5db3ec;
+  margin: 10rpx 17rpx 0rpx 17rpx;
+  border-radius: 10rpx;
+  height: 200rpx;
+}
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 25rpx;
+  border-radius:10rpx;
+  overflow: hidden;
+  
+}
+
+.userinfo-nickname {
+  color:rgba(232, 243, 247, 0.726);
+  align-self: center;
+}
+.approve{
+  padding: 20rpx;
+  margin: 17rpx;
+  background-color: rgba(255, 255, 255, 0.712);
+  height: 100rpx;
+  display: flex;
+  border-radius: 10rpx
+}
+.satuation{
+  margin-left: 20rpx;
+  align-self: center;
+  
+}
+.satuation-button::after{
+   border: none;
+   color: black;
+   
+   
+}

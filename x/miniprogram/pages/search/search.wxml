@@ -1,0 +1,61 @@
+<!--pages/search/search.wxml-->
+
+<!-- 搜索栏 -->
+<view class="{{scrollTop>1 ? 'topnavFixed' : 'topnavAbsolute'}}">
+  <view class="cu-bar search bg-white">
+    <view class="search-form round">
+      <text class="cuIcon-search"></text>
+      <input type="text" focus="{{focus}}" placeholder="搜索书、钥匙、卡片等" value="{{input_string}}" bindinput='b_input'></input>
+    </view>
+
+    <view class="action">
+      <button class="cu-btn bg-green shadow-blur round" bindtap='b_but'>搜索</button>
+    </view>
+
+  </view>
+  <view style="background-color:green;width:100%;height:0.5px;"></view>
+</view>
+<!-- 原版搜索栏 -->
+<!-- 
+<view class='content'>
+  <input class='inpt' bindinput='b_input'></input>
+  <button class='but' bindtap='b_but' hover-class='but_click'>搜索</button>
+</view> -->
+
+
+<view class="{{showview?'hide':'show'}}" style="z-index: 0;">
+  <view>
+    <view class='detail' wx:for="{{infor}}" bindtap='detail' data-src='{{item.time}}'>
+      <view class='top'>
+        <image src='{{item.userReceiverHeadPicture}}' class='de-image' mode='aspectFill'></image>
+        <text class='title'>{{item.userReceiveName}}</text>
+      </view>
+      <view class='font_images'>
+        <view class='describe'>
+          <text>{{item.title}}</text>
+        </view>
+        <view class='describe_image'>
+          <image class='lost-images' src='{{item.image}}' mode='aspectFill' data-src='{{item.image}}'></image>
+        </view>
+
+        <view class='time'>{{item.time}}</view>
+
+      </view>
+      <!-- <view class="view_space"></view> -->
+    </view>
+  </view>
+
+
+  <view>
+    <!-- <loading hidden="{{hidden}}">
+      加载中...
+    </loading> -->
+    <view hidden="{{four_zero_four}}" style="border-radius: 10px;width:100%;height:100%;">
+  <!-- <view style="background-color:green;width:100%;height:0.5px;"></view> -->
+  <image src='../../images/nofind.png' mode='widthFix' style="border-radius: 10px;width:100%;height:100%;"></image>
+</view>
+    <mp-loading type="circle" show="{{show}}" tips="玩命加载中..."></mp-loading>
+    <view hidden="{{view_hidden}}" style="font-size:7pt;width:100%;height:auto;text-align:center;background-color:white;">已经是最底层了噢~</view>
+
+  </view>
+</view>

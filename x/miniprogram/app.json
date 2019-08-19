@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "pages/startPage/startPage",
+    "pages/home/home",
+    "pages/share/share",
+    "pages/logon/logon",
+    "pages/myself/myself",
+    "pages/search/search",
+    "pages/detail/detail",
+    "pages/usePage/usePage",
+    "pages/noface/noface",
+    "pages/logon_user_picture/logon_user_picture"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "校园失物寻回箱",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#111111",
+    "selectedColor": "#2abef0",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/首页.png",
+        "selectedIconPath": "images/首页.png"
+      },
+      {
+        "pagePath": "pages/share/share",
+        "text": "发布",
+        "iconPath": "images/发布.png",
+        "selectedIconPath": "images/发布.png"
+      },
+      {
+        "pagePath": "pages/myself/myself",
+        "text": "我的",
+        "iconPath": "images/我的.png",
+        "selectedIconPath": "images/我的.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+
+}

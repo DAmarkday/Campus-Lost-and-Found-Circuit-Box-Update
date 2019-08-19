@@ -1,0 +1,28 @@
+ <view>
+ <view style="height:auto;width:100%;background:white;border-radius:7px;"><view style="font-size:9pt;padding:12px;font-weight:bold;">以下是个人使用情况</view></view>
+  <view class='detail' wx:for="{{inforx}}" bindtap='detail' data-src='{{item.time}}'>
+    <view class='top'>
+      <image src="{{item.userReceiverHeadPicture}}" class='de-image' mode='aspectFill'></image>
+      <text class='title'>{{item.userReceiveName}}</text>
+    </view>
+    <view class='font_images'>
+      <view class='describe'>
+        <text>{{item.title}}</text>
+      </view>
+      <view class='describe_image'>
+        <image class='lost-images' src='{{item.image}}' mode='aspectFill' data-src='{{item.image}}'></image>
+      </view>
+      <view class='time'>{{item.time}}</view>
+
+    </view>
+    <!-- <view class="view_space"></view> -->
+  </view>
+</view>
+
+  <view>
+    <!-- <loading hidden="{{hidden}}">
+            加载中... -->
+    <!-- </loading> -->
+    <mp-loading type="circle" show="{{show}}" tips="玩命加载中..."></mp-loading>
+    <view hidden="{{view_hidden}}" style="font-size:7pt;width:100%;height:auto;text-align:center;background-color:white;">已经是最底层了噢~</view>
+  </view>

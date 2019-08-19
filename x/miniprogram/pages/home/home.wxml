@@ -1,0 +1,60 @@
+<!--pages/home/home.wxml-->
+<view>
+  <!-- <view class='line'></view> -->
+  <!-- 搜索 -->
+  <view class="cu-bar bg-cyan search" style="background-color: #cce6ff;" bindtap='search'>
+    <view class="search-form radius">
+      <text class="cuIcon-search"></text>
+      <input type="text" placeholder="搜索书、钥匙、卡片等" value="{{input_string}}" confirm-type="search"></input>
+    </view>
+    <view class="action">
+      <button class="cu-btn bg-green shadow-blur round" style="background: rgb(114, 193, 240);">搜索</button>
+    </view>
+  </view>
+
+  <!-- 搜索栏 -->
+  <!-- <view class='content' bindtap='search'>
+    <input class='inpt' bindinput='b_input'></input>
+    <button class='but' bindtap='b_but' hover-class='but_click'>搜索</button>
+  </view> -->
+  <!-- 轮播栏 -->
+  <!-- 分割线 -->
+  <!-- <view class='line'></view> -->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" mode='aspectFill' style='width:100%' />
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- <view style='height:35rpx;width:auto;background:white;'></view> -->
+  <view>
+  <view class='detail' wx:for="{{infor}}" bindtap='detail' data-src='{{item.time}}'>
+    <view class='top'>
+      <image src="{{item.userReceiverHeadPicture}}" class='de-image' mode='aspectFill'></image>
+      <text class='title'>{{item.userReceiveName}}</text>
+    </view>
+    <view class='font_images'>
+      <view class='describe'>
+        <text>{{item.title}}</text>
+      </view>
+      <view class='describe_image'>
+        <image class='lost-images' src='{{item.image}}' mode='aspectFill' data-src='{{item.image}}'></image>
+      </view>
+      <view class='time'>{{item.time}}</view>
+
+    </view>
+    <!-- <view class="view_space"></view> -->
+  </view>
+</view>
+
+  <view>
+    <!-- <loading hidden="{{hidden}}">
+            加载中... -->
+    <!-- </loading> -->
+    <mp-loading type="circle" show="{{show}}" tips="玩命加载中..."></mp-loading>
+    <view hidden="{{view_hidden}}" style="font-size:7pt;width:100%;height:auto;text-align:center;background-color:white;">已经是最底层了噢~</view>
+  </view>
+
+
+</view>

@@ -1,0 +1,10 @@
+/* pages/search/search.wxss */
+@import"../home/home.wxss";
+.topnavFixed{
+position:fixed;width:100%;height:auto; top:0rpx;z-index: 1;
+background-color: white;
+}
+.topnavAbsolute{
+width:100%;height:auto;z-index: 1;
+background-color: white;top:0rpx;
+}
