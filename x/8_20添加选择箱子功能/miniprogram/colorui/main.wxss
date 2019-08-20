@@ -1539,7 +1539,7 @@ button.icon.lg {
 	/* min-height: 100rpx; */
 	justify-content: space-between;
   padding: 10rpx 0rpx;
-  margin-top: 10rpx;
+  /* margin-top: 10rpx; */
   margin-bottom: 2rpx
 }
 

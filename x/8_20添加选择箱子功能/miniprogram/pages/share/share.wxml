@@ -1,0 +1,116 @@
+<!--pages/share/share.wxml-->
+<form bindsubmit='onAdd'>
+  <!-- 标题 -->
+  <view>
+    <input class='title' placeholder='失物名称' maxlength='30' bindblur='titleis' placeholder-style="color:#ccc;font-size:30rpx;" />
+  </view>
+  <!-- 描述区域  -->
+  <view class='information'>
+    <textarea class='describe' bindblur='talks' placeholder="请详细描述失物情况。" maxlength="200" placeholder-style="color:#ccc;font-size:30rpx;" />
+  </view>
+
+
+
+  <!-- 图片 -->
+
+  <view class="cu-bar bg-white">
+    <view class="action">
+      图片上传
+    </view>
+  </view>
+
+  <view class="cu-form-group">
+    <view class="grid col-4 grid-square flex-sub">
+      <!-- 上传的图片 -->
+      <view class="bg-img" wx:if="{{imgUrl}}">
+        <image src='{{imgUrl}}' mode='aspectFill'></image>
+      </view>
+      <!-- 相机点击的图片 -->
+      <view class="solids">
+        <text class="cuIcon-cameraadd" bindtap='doUpload'></text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 原来上传 -->
+  <!-- <view class='row_image'>
+    <view wx:if='{{imgUrl}}'>
+      <image src='{{imgUrl}}' class='add' mode="aspectFit"></image>
+    </view>
+   
+    <image src='cloud://pg-fe78f3.7067-pg-fe78f3/加.png' class='add' bindtap='doUpload'></image>
+  </view> -->
+
+
+  <!-- 箱子大小选择 -->
+  <view class='radiog' bindtap="popup2">
+    <text class='size'>选择箱子型号：</text>
+    <text class="jiantou">>>>></text>
+    <!-- <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio" wx:for="{{items}}">
+        <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+      </label>
+    </radio-group> -->
+
+  </view>
+
+
+  <!-- 弹出选择箱子的窗口 -->
+
+<modal hidden="{{show1}}" title="请选择箱子型号" bindconfirm="boxconfirm" bindcancel="boxcancel">
+  <view class="example">
+  <view>
+    <text class="box"></text>
+    <text class="character"> 可选</text>
+  </view>
+   <view>
+    <text class="box" style="background:red"></text>
+    <text class="character"> 已满</text>
+  </view>
+  </view>
+  <view class="choice">
+    <view class="box1">
+      <view class="one" bindtap="p1" style="background:{{red1}}" data-size="1">1</view>
+      <view class="one" style="background:{{red2}}" bindtap="p2" data-size="2">2</view>
+      <view class="one" style="background:{{red3}}" bindtap="p3" data-size="3">3</view>
+      <view class="one" style="background:{{red4}}" bindtap="p4" data-size="4">4</view>
+      <view class="one" style="background:{{red5}}" bindtap="p5" data-size="5">5</view>
+    </view>
+
+    <view class="box1">
+      <view class="one" bindtap="p6" style="background:{{red6}}" data-size="6">6</view>
+      <view class="one" style="background:{{red7}}" bindtap="p7" data-size="7">7</view>
+      <view class="one" style="background:{{red8}}" bindtap="p8" data-size="8">8</view>
+      <view class="one" style="background:{{red9}}" bindtap="p9" data-size="9">9</view>
+      <view class="one" style="background:{{red10}}" bindtap="p10" data-size="10">10</view>
+    </view>
+
+    <view class="box1">
+      <view class="one" style="background:{{red11}}" bindtap="p11" data-size="11">11</view>
+      <view class="one" style="background:{{red12}}" bindtap="p12" data-size="12"> 12</view>
+      <view class="one" style="background:{{red13}}" bindtap="p13" data-size="13"> 13</view>
+      <view class="one" style="background:{{red14}}" bindtap="p14" data-size="14">14</view>
+      <view class="one" style="background:{{red15}}" bindtap="p15" data-size="15">15</view>
+    </view>
+
+    <view class="box1">
+      <view class="one" style="background:{{red16}}" bindtap="p16" data-size="16">16</view>
+      <view class="one" style="background:{{red17}}" bindtap="p17" data-size="17">17</view>
+      <view class="one" style="background:{{red18}}" bindtap="p18" data-size="18">18</view>
+      <view class="one" style="background:{{red19}}" bindtap="p19" data-size="19">19</view>
+      <view class="one" style="background:{{red20}}" bindtap="p20" data-size="20">20</view>
+    </view>
+
+    <view class="box1">
+      <view class="one" style="background:{{red21}}" bindtap="p21" data-size="21">21</view>
+      <view class="one" style="background:{{red22}}" bindtap="p22" data-size="22">22</view>
+      <view class="one" style="background:{{red23}}" bindtap="p23" data-size="23">23</view>
+      <view class="one" style="background:{{red24}}" bindtap="p24" data-size="24">24</view>
+      <view class="one" style="background:{{red25}}" bindtap="p25" data-size="25">25</view>
+    </view>
+
+  </view>
+  <view class="white"></view>
+</modal>
+  <button class='share' type='primary' form-type="submit">发布</button>
+</form>

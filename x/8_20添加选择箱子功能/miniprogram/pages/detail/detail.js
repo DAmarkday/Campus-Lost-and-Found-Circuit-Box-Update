@@ -28,7 +28,7 @@ Page({
     infor: [],
     time:'',
     faceProved:false,//判断人脸对比是否是一个人
-    size: '',
+    endendsize: '',
   },
 
   /**
@@ -123,7 +123,7 @@ Page({
       }, 500)
     };
     if (this.data.client && this.data.client.connected) {//发布成功和订阅成功是同时运行，导致显示同时，体验不流畅
-      this.data.client.publish('sensor/open', this.data.infor[0].size);//根据尺寸开箱
+      this.data.client.publish('sensor/open', this.data.infor[0].endendsize);//根据尺寸开箱
     };
   },
   /**

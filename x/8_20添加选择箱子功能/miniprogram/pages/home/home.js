@@ -95,6 +95,7 @@ Page({
         that.setData({
           infor: res.data
         })
+        //console.log(res.data);
       }
     })
   },

@@ -19,7 +19,9 @@ Page({
     judge_down_to_up_head_count: 0, //确定点头的照片数
     last_yaw: 0,
     last_pitch: 0,
-    music_count:0
+    music_count:0,
+    prove_face_front:false,
+    save_font_face: ''
 
   },
   open: function() {
@@ -49,6 +51,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    this.setData({
+      tempImagePath: '',
+      pictureID: '',
+      judge_left_change_right_head_count: 0, //确定摇头的照片数
+      judge_down_to_up_head_count: 0, //确定点头的照片数
+      last_yaw: 0,
+      last_pitch: 0,
+      music_count: 0,
+      prove_face_front: false,
+      save_font_face: ''
+    })
     this.face_recognition();
   },
 
@@ -149,7 +162,7 @@ Page({
       icon: 'none',
       duration: 2000
     });
-    innerAudioConext.src = "/music/putface.M4A"
+    innerAudioConext.src = "/music/putface.mp3"
     innerAudioConext.play();
     this.getAccessToken().then(res => {
       console.log(res);
@@ -218,15 +231,18 @@ Page({
   judge_face: function(res) { //判断用户点头摇头动作
   let that = this;
     if (res.data.error_code == 0) {
-      if (that.data.judge_left_change_right_head_count < 2) {
+      if (this.data.prove_face_front == false){
+        that.judge_prove_face_front(res);
+      }else if (that.data.judge_left_change_right_head_count < 2) {
         that.judge_left_change_right_head(res); //判断用户摇头
       } else if(that.data.judge_down_to_up_head_count < 2){
         that.judge_down_to_up_head(res); //判断用户点头
       }else {
+        
         wx.showLoading({
           title: '上传中',
         });
-        innerAudioConext.src = "/music/upload.M4A"
+        innerAudioConext.src = "/music/upload.mp3"
         innerAudioConext.play();
         this.uploadUserPictureProve();
         clearTimeout(timer);
@@ -250,9 +266,29 @@ Page({
       });
     }
   },
+  judge_prove_face_front:function(res){
+    let pitch = Math.abs(res.data.result.face_list[0].angle.pitch);
+    let yaw = Math.abs(res.data.result.face_list[0].angle.yaw);
+    if ((pitch < 5 ) && (yaw<5)) {
+      let font_face=this.data.tempImagePath
+      this.setData({
+        prove_face_front: true,
+        save_font_face:font_face
+      })
+    } else {
+      wx.showToast({
+        title: '未检测到正脸',
+        icon: 'none',
+        duration: 1000
+      });
+    }
+    
+    
+    
+  },
   judge_down_to_up_head: function(res) {
     if(this.data.music_count==1){
-      innerAudioConext.src = "/music/headupdown.M4A"
+      innerAudioConext.src = "/music/headupdown.mp3"
       innerAudioConext.play();
       this.data.music_count++;
 
@@ -279,7 +315,7 @@ Page({
 
   judge_left_change_right_head: function(res) {
     if (this.data.music_count == 0) {
-      innerAudioConext.src = "/music/leftright.M4A"
+      innerAudioConext.src = "/music/leftright.mp3"
       innerAudioConext.play();
       this.data.music_count++;
 
@@ -332,7 +368,7 @@ Page({
             return new Promise((resolve, reject) => {
               wx.cloud.uploadFile({
                 cloudPath: 'takeoutuserpictureprove/' + nowTimeName + '.jpg', // 上传至云端的路径
-                filePath: that.data.tempImagePath, // 小程序临时文件路径
+                filePath: that.data.save_font_face, // 小程序临时文件路径
                 success: resx => {
                   // 返回文件 ID
                   console.log(resx);
@@ -402,7 +438,7 @@ Page({
                   wx.cloud.deleteFile({
                     fileList: [that.data.pictureID],
                     success: res => {
-                      innerAudioConext.src = "/music/success.M4A"
+                      innerAudioConext.src = "/music/success.mp3"
                       innerAudioConext.play();
                       resolve();
 

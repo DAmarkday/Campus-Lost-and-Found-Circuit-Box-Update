@@ -16,7 +16,7 @@
   /* background: rgba(220, 245, 243, 0.562); */
   height: 520rpx;
   background: white;
-  border-radius: 10px;
+  border-radius: 5px;
   margin: 3px;
   box-shadow: 2px 2px 1px 2px rgb(219, 223, 219);
 }
