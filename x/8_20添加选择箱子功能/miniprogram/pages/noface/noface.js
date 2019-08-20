@@ -364,7 +364,7 @@ Page({
           let nowTimeName = Y + M + D + "_" + h + "_" + m + "_" + s; //获取当前时间来命名
 
           let that = this; //上传用户照片到未认证的表里接受认证
-          if (that.data.tempImagePath != '') {
+          if (that.data.save_font_face != '') {
             return new Promise((resolve, reject) => {
               wx.cloud.uploadFile({
                 cloudPath: 'takeoutuserpictureprove/' + nowTimeName + '.jpg', // 上传至云端的路径
